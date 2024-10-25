@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="changes/001-init-schema.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2" author="youssef">
+        <sqlFile path="classpath:db/changelog/changes/002-rename-table.sql" />
+    </changeSet>
+
+    <changeSet id="3" author="youssef">
+        <modifyDataType tableName="user" columnName="password" newDataType="VARCHAR(100)"/>
+    </changeSet>
+
+    <changeSet id="4" author="youssef">
+        <sqlFile path="changes/insert-users.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+
+</databaseChangeLog>

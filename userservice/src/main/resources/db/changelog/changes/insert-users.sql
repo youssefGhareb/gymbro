@@ -1,0 +1,11 @@
+INSERT INTO "user" (id, firstname, lastname, username, email, password, roles, enabled, account_non_expired, credentials_non_expired, account_non_locked, created_at, updated_at) VALUES
+('e5f37b44-8945-40a4-bc73-7ff27abf5f8d', 'John', 'Doe', 'john_doe', 'john_doe@example.com', '$2a$10$z/5z/3pKlH1eGUM7N4dpUO9Gm.4P1iw6Wn06pHahUFGZ8UKW1K5F6', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('2e1b7367-430c-4859-a589-9d52a163a8e3', 'Jane', 'Smith', 'jane_smith', 'jane_smith@example.com', '$2a$10$VPe1bE5ZmE9G3p1RWGFLe.tC0ZmoJ5S.L.BW2qQ2/VKJ9y7cOG3W6', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('6b8e09e1-36ae-4eb6-974f-4a8790f81f0d', 'Alice', 'Wonder', 'alice_wonder', 'alice_wonder@example.com', '$2a$10$VPe1bE5ZmE9G3p1RWGFLe.tC0ZmoJ5S.L.BW2qQ2/VKJ9y7cOG3W6', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('ec575c8b-d0aa-4bce-b314-3010c35c7f99', 'Bob', 'Builder', 'bob_builder', 'bob_builder@example.com', '$2a$10$h0B5nZy4e72zS4ZB3I8eeuRj2/CM9DGoZIk0Ttf1q8RVrZJ/VWce2', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('84d592e8-e0a3-4e94-867f-c9c798317eb8', 'Charlie', 'Brown', 'charlie_brown', 'charlie_brown@example.com', '$2a$10$YTyKZrLq8dO5Rn.zFAlC/.1Ug2r0p1H0kO//2u7k4R9IwHoCdeJ76', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('a3b8a78a-fae6-4b54-b9e3-b8b203e3a24e', 'Daisy', 'Maid', 'daisy_maid', 'daisy_maid@example.com', '$2a$10$QdR8O/qGdWwTtZx.FxHvpe3CIPQ/v5RV5R8j46GB4l68CpKlU1VPe', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('ff9c0be3-198c-4b37-befb-0ae0f1390c40', 'Eve', 'Online', 'eve_online', 'eve_online@example.com', '$2a$10$5D0LqYUk0Zz0bGkqmvbOueWZgqekF2R6cSTd1j1WzEG5C7WQdiG7G', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('bc830c57-e9b9-45b4-b83e-2efb6d3b8f01', 'Frank', 'Castle', 'frank_castle', 'frank_castle@example.com', '$2a$10$7/1TKf8xC.NFhCqG3FD3GO21pH2tMkRm2jsdOrI0CF9r8rK4M80T.', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('5c41b772-5c6f-44e0-b183-9b1258cf6e0f', 'Grace', 'Hopper', 'grace_hopper', 'grace_hopper@example.com', '$2a$10$Vx5gA9W3uYOeFjpQAs/7V.aMHu.PSbh3Pb5UO/aTF.Ip7dF.R9PzO', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW()),
+('79e1f564-d6cb-41d4-8d39-13fa121e408e', 'Hank', 'Moody', 'hank_moody', 'hank_moody@example.com', '$2a$10$3ZrTc3L0H.MjXJ8K8Yye9e.JoB1/2r3Fhwxl3p/H0oaY4UuDFd94C', 'ROLE_USER', TRUE, TRUE, TRUE, TRUE, NOW(), NOW());
