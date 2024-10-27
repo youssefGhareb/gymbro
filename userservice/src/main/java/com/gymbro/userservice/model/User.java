@@ -5,9 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -23,6 +26,12 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @Column(nullable = false, name = "firstname") // Password should not be null
+    private String firstName;
+
+    @Column(nullable = false, name = "lastname") // Password should not be null
+    private String lastName;
+
     @Column(nullable = false, unique = true) // Ensures unique username
     private String username;
 
@@ -34,6 +43,25 @@ public class User implements UserDetails {
 
     @Column
     private boolean enabled;
+
+    @Column(name = "roles")
+    private String roles;
+
+    @Column(name = "account_non_expired")
+    private boolean isAccountNonExpired;
+
+    @Column(name = "account_non_locked")
+    private boolean isAccountNonLocked;
+
+    @Column(name = "credentials_non_expired")
+    private boolean isCredentialsNonExpired;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
 
     // implement userDetails
 
