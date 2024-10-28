@@ -22,19 +22,20 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody @NotNull UserRegistrationDTO registrationDto){
-        if (userService.getUserByEmail(registrationDto.getEmail()).isEmpty() || userService.getUserByUsername(registrationDto.getUsername()).isEmpty()){ // Need to move this logic to the user service
-            User user = new User();
-            user.setFirstName(registrationDto.getFirstName());
-            user.setLastName(registrationDto.getLastName());
-            user.setUsername(registrationDto.getUsername());
-            user.setEmail(registrationDto.getEmail());
-            user.setPassword(passwordEncoder.encode(registrationDto.getPassword())); // Encrypt the password
-            user.setEnabled(true);
-            user.setAccountNonExpired(true);
-            user.setCredentialsNonExpired(true);
-            user.setAccountNonLocked(true);
-            user.setCreatedAt(java.time.Instant.now());
-            user.setUpdatedAt(java.time.Instant.now());
+        if (userService.getUserByEmail(registrationDto.email()).isEmpty() || userService.getUserByUsername(registrationDto.username()).isEmpty()){ // Need to move this logic to the user service
+            User user = User.builder()
+                    .firstName(registrationDto.firstName())
+                    .lastName(registrationDto.lastName())
+                    .username(registrationDto.username())
+                    .email(registrationDto.email())
+                    .password(passwordEncoder.encode(registrationDto.password())) // Encrypt the password
+                    .enabled(true)
+                    .isAccountNonExpired(true)
+                    .isCredentialsNonExpired(true)
+                    .isAccountNonLocked(true)
+                    .createdAt(java.time.Instant.now())
+                    .updatedAt(java.time.Instant.now())
+                    .build();
 
             userService.saveUser(user);
 
