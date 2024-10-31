@@ -22,7 +22,8 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody @NotNull UserRegistrationDTO registrationDto){
-        if (userService.getUserByEmail(registrationDto.email()).isEmpty() || userService.getUserByUsername(registrationDto.username()).isEmpty()){ // Need to move this logic to the user service
+        // which user service? :P sorry for breaking your changes brah
+        if (userService.getUserByEmail(registrationDto.email()) == null || userService.getUserByUsername(registrationDto.username()) == null){ // Need to move this logic to the user service
             User user = User.builder()
                     .firstName(registrationDto.firstName())
                     .lastName(registrationDto.lastName())
